@@ -5,11 +5,12 @@ import { Contact, Person } from './ContactElement.styled';
 import { Button } from '../ContactForm/ContactForm.styled';
 import { iconSize } from '../constans';
 import { useDispatch } from 'react-redux';
+import { deleteContact } from 'redux/contactsSlice';
 
 const ContactElement = ({ id, name, number }) => {
   const dispatch = useDispatch();
 
-  const deleteContact = contactId => {
+  const handleDeleteContact = contactId => {
     dispatch(deleteContact(contactId));
   };
 
@@ -18,7 +19,7 @@ const ContactElement = ({ id, name, number }) => {
       <Person>
         <FaPhone size={iconSize.xs} /> {name} : {number}
       </Person>
-      <Button type="button" onClick={() => deleteContact(id)}>
+      <Button type="button" onClick={() => handleDeleteContact(id)}>
         Delete
       </Button>
     </Contact>

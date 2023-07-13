@@ -1,4 +1,4 @@
-import { useState} from 'react';
+// import { useState} from 'react';
 
 import ContactForm from './ContactForm';
 import ContactList from './ContactList';
@@ -12,7 +12,7 @@ export function App() {
   // const [contacts, setContacts] = useState(() => {
   //   return JSON.parse(window.localStorage.getItem('contacts')) ?? []
   // });
-  const [filter, setFilter] = useState('');
+  // const [filter, setFilter] = useState('');
 
 
   // const formSubmitHandler = (newContact) => {
@@ -26,10 +26,10 @@ export function App() {
   // }
 
 
-  const changeFilter = (event) => {
-    setFilter(event.currentTarget.value);
-    console.log(changeFilter)
-  };
+  // const changeFilter = (event) => {
+  //   setFilter(event.currentTarget.value);
+  //   console.log(changeFilter)
+  // };
   
 
   // const deleteContact = contactId => {
@@ -54,7 +54,7 @@ export function App() {
       <ContactForm />
 
       <h2>Contacts</h2>
-      <Filter filter={filter} onChange={changeFilter} />
+      <Filter />
       <ContactList />
     </Division>
   )
