@@ -1,4 +1,4 @@
-import { useState, useEffect} from 'react';
+import { useState} from 'react';
 
 import ContactForm from './ContactForm';
 import ContactList from './ContactList';
@@ -9,9 +9,9 @@ import { Division } from './App.styled';
 
 export function App() {
   
-  const [contacts, setContacts] = useState(() => {
-    return JSON.parse(window.localStorage.getItem('contacts')) ?? []
-  });
+  // const [contacts, setContacts] = useState(() => {
+  //   return JSON.parse(window.localStorage.getItem('contacts')) ?? []
+  // });
   const [filter, setFilter] = useState('');
 
 
@@ -32,20 +32,20 @@ export function App() {
   };
   
 
-  const deleteContact = contactId => {
-    setContacts(prevState => (prevState.filter(contact => contact.id !== contactId)));
-  };
+  // const deleteContact = contactId => {
+  //   setContacts(prevState => (prevState.filter(contact => contact.id !== contactId)));
+  // };
 
-  const getVisibleContacts = () => {
-    const normalazedFilter = filter.toLowerCase();
-    return contacts.filter(contact => contact.name.toLowerCase().includes(normalazedFilter));
-  }
+  // const getVisibleContacts = () => {
+  //   const normalazedFilter = filter.toLowerCase();
+  //   return contacts.filter(contact => contact.name.toLowerCase().includes(normalazedFilter));
+  // }
 
-  const visibleContacts = getVisibleContacts();
+  // const visibleContacts = getVisibleContacts();
 
-  useEffect(() => {
-    window.localStorage.setItem('contacts', JSON.stringify(contacts));
-  }, [contacts]);
+  // useEffect(() => {
+  //   window.localStorage.setItem('contacts', JSON.stringify(contacts));
+  // }, [contacts]);
   
 
   return (
@@ -55,7 +55,7 @@ export function App() {
 
       <h2>Contacts</h2>
       <Filter filter={filter} onChange={changeFilter} />
-      <ContactList visibleContacts={visibleContacts} deleteContact={deleteContact}/>
+      <ContactList />
     </Division>
   )
 };

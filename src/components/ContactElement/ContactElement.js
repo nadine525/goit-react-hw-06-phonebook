@@ -4,14 +4,21 @@ import PropTypes from 'prop-types';
 import { Contact, Person } from './ContactElement.styled';
 import { Button } from '../ContactForm/ContactForm.styled';
 import { iconSize } from '../constans';
+import { useDispatch } from 'react-redux';
 
-const ContactElement = ({ contact, deleteContact }) => {
+const ContactElement = ({ id, name, number }) => {
+  const dispatch = useDispatch();
+
+  const deleteContact = contactId => {
+    dispatch(deleteContact(contactId));
+  };
+
   return (
     <Contact>
       <Person>
-        <FaPhone size={iconSize.xs} /> {contact.name} : {contact.number}
+        <FaPhone size={iconSize.xs} /> {name} : {number}
       </Person>
-      <Button type="button" onClick={() => deleteContact(contact.id)}>
+      <Button type="button" onClick={() => deleteContact(id)}>
         Delete
       </Button>
     </Contact>
