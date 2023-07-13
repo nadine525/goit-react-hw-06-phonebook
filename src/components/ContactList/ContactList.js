@@ -20,10 +20,12 @@ const ContactList = () => {
 
   return (
     <List>
-      {visibleContacts.lenght > 0 ? (
-        visibleContacts.map(({ id, name, number }) => (
-          <ContactElement key={id} id={id} name={name} number={number} />
-        ))
+      {visibleContacts.length > 0 ? (
+        visibleContacts.map(({ id, name, number }) => {
+          return (
+            <ContactElement key={id} id={id} name={name} number={number} />
+          );
+        })
       ) : (
         <p>Let's start creating your phonebook! </p>
       )}
