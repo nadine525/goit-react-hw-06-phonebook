@@ -15,15 +15,15 @@ export function App() {
   const [filter, setFilter] = useState('');
 
 
-  const formSubmitHandler = (newContact) => {
-    console.log(newContact)
+  // const formSubmitHandler = (newContact) => {
+  //   console.log(newContact)
 
-    if (contacts.some(contact => contact.name.toLowerCase() === newContact.name.toLowerCase())) {
-      return alert(`${newContact.name} is already in the contact list`)
-    } else {
-      setContacts(prevState => [newContact, ...prevState])
-    }
-  }
+  //   if (contacts.some(contact => contact.name.toLowerCase() === newContact.name.toLowerCase())) {
+  //     return alert(`${newContact.name} is already in the contact list`)
+  //   } else {
+  //     setContacts(prevState => [newContact, ...prevState])
+  //   }
+  // }
 
 
   const changeFilter = (event) => {
@@ -51,7 +51,7 @@ export function App() {
   return (
      <Division>
       <h1>Phonebook</h1>
-      <ContactForm formSubmitHandler={formSubmitHandler} />
+      <ContactForm />
 
       <h2>Contacts</h2>
       <Filter filter={filter} onChange={changeFilter} />
