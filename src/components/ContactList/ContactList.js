@@ -1,5 +1,4 @@
 import React from 'react';
-// import PropTypes from 'prop-types';
 import ContactElement from '../ContactElement';
 import { List } from './ContactList.styled';
 import { useSelector } from 'react-redux';
@@ -36,14 +35,3 @@ const ContactList = () => {
 };
 
 export default ContactList;
-
-// ContactList.propTypes = {
-//   visibleContacts: PropTypes.arrayOf(
-//     PropTypes.exact({
-//       id: PropTypes.string.isRequired,
-//       name: PropTypes.string.isRequired,
-//       number: PropTypes.string.isRequired,
-//     }).isRequired
-//   ).isRequired,
-//   deleteContact: PropTypes.func.isRequired,
-// };
