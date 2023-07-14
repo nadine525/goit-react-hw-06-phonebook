@@ -29,10 +29,7 @@ const ContactElement = ({ id, name, number }) => {
 export default ContactElement;
 
 ContactElement.propTypes = {
-  contact: PropTypes.exact({
-    id: PropTypes.string.isRequired,
-    name: PropTypes.string.isRequired,
-    number: PropTypes.string.isRequired,
-  }).isRequired,
-  deleteContact: PropTypes.func.isRequired,
+  id: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
+  number: PropTypes.string.isRequired,
 };

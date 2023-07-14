@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { Label } from './Filter.styled';
 import { Input } from '../ContactForm/ContactForm.styled';
 import { useSelector, useDispatch } from 'react-redux';
@@ -23,8 +22,3 @@ const Filter = () => {
 };
 
 export default Filter;
-
-Filter.propTypes = {
-  filter: PropTypes.string.isRequired,
-  onChange: PropTypes.func.isRequired,
-};

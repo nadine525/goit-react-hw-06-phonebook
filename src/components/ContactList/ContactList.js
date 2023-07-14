@@ -1,5 +1,5 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 import ContactElement from '../ContactElement';
 import { List } from './ContactList.styled';
 import { useSelector } from 'react-redux';
@@ -7,10 +7,12 @@ import { getContacts, getFilter } from 'redux/selectors';
 
 const ContactList = () => {
   const contacts = useSelector(getContacts);
+  console.log(contacts);
   const filter = useSelector(getFilter);
 
   const getVisibleContacts = () => {
     const normalazedFilter = filter.toLowerCase();
+
     return contacts.filter(contact =>
       contact.name.toLowerCase().includes(normalazedFilter)
     );
@@ -35,13 +37,13 @@ const ContactList = () => {
 
 export default ContactList;
 
-ContactList.propTypes = {
-  visibleContacts: PropTypes.arrayOf(
-    PropTypes.exact({
-      id: PropTypes.string.isRequired,
-      name: PropTypes.string.isRequired,
-      number: PropTypes.string.isRequired,
-    }).isRequired
-  ).isRequired,
-  deleteContact: PropTypes.func.isRequired,
-};
+// ContactList.propTypes = {
+//   visibleContacts: PropTypes.arrayOf(
+//     PropTypes.exact({
+//       id: PropTypes.string.isRequired,
+//       name: PropTypes.string.isRequired,
+//       number: PropTypes.string.isRequired,
+//     }).isRequired
+//   ).isRequired,
+//   deleteContact: PropTypes.func.isRequired,
+// };
